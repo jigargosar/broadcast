@@ -8,6 +8,8 @@ import mergeRight from 'ramda/es/mergeRight'
 import pipe from 'ramda/es/pipe'
 import trim from 'ramda/es/trim'
 import isEmpty from 'ramda/es/isEmpty'
+import nanoid from 'nanoid'
+import prepend from 'ramda/es/prepend'
 
 const useStateUpdate = initialState => updateFn => {
   const [get, set] = useGetSet(initialState)
@@ -41,7 +43,17 @@ const update = msg => state => {
       if (isBlank(state.ipTxt)) {
         return state
       } else {
-        return mergeRight(state)({ ipTxt: '' })
+        const now = Date.now()
+        const newItem = {
+          id: nanoid(),
+          txt: state.ipTxt.trim(),
+          createdAt: now,
+          modifiedAt: now,
+        }
+        return mergeRight(state)({
+          ipTxt: '',
+          items: prepend(newItem)(state.items),
+        })
       }
     },
   })
