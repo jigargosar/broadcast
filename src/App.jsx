@@ -7,11 +7,12 @@ export function App() {
   const [get, set] = useGetSet({ ipTxt: '' })
   const { ipTxt } = get()
   return (
-    <div className="measure-wide center">
+    <div className="pv2 measure-wide center">
       <div>Header</div>
+      <div className="pa1" />
       <div className="">
         <input
-          className="w-100 lh-copy"
+          className="ph1 w-100 lh-copy"
           autoFocus
           type="text"
           value={ipTxt}
