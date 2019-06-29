@@ -28,6 +28,8 @@ const Msg = taggedSum('Msg', {
   OnIpSubmit: [],
 })
 
+const initialState = { ipTxt: '', items: [] }
+
 const update = msg => state => {
   const isBlank = pipe(
     trim,
@@ -46,7 +48,7 @@ const update = msg => state => {
 }
 
 export function App() {
-  const [state, send] = useStateUpdate({ ipTxt: '' })(update)
+  const [state, send] = useStateUpdate(initialState)(update)
   const { ipTxt } = state
   return (
     <div className="pv2 measure-wide center">
