@@ -25,6 +25,7 @@ const useStateUpdate = initialState => updateFn => {
 
 const Msg = taggedSum('Msg', {
   OnIpChanged: ['value'],
+  OnIpSubmit: [],
 })
 
 const update = msg => state => {
@@ -51,7 +52,13 @@ export function App() {
     <div className="pv2 measure-wide center">
       <div>Header</div>
       <div className="pa1" />
-      <div className="">
+      <form
+        className=""
+        onSubmit={e => {
+          e.preventDefault()
+          send(Msg.OnIpSubmit)
+        }}
+      >
         <input
           className="ph1 w-100 lh-copy"
           autoFocus
@@ -59,7 +66,7 @@ export function App() {
           value={ipTxt}
           onChange={e => send(Msg.OnIpChanged(e.target.value))}
         />
-      </div>
+      </form>
     </div>
   )
 }
