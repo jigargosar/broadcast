@@ -4,7 +4,6 @@ import './index.css'
 import useGetSet from 'react-use/lib/useGetSetState'
 import equals from 'ramda/es/equals'
 import { taggedSum } from 'daggy'
-import assoc from 'ramda/es/assoc'
 import mergeRight from 'ramda/es/mergeRight'
 
 const useStateUpdate = initialState => updateFn => {
