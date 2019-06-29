@@ -50,7 +50,7 @@ export function App() {
   const { ipTxt } = state
   return (
     <div className="pv2 measure-wide center">
-      <div>Header</div>
+      <div>BroadCast</div>
       <div className="pa1" />
       <form
         className="flex "
