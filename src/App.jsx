@@ -10,6 +10,9 @@ import trim from 'ramda/es/trim'
 import isEmpty from 'ramda/es/isEmpty'
 import nanoid from 'nanoid'
 import prepend from 'ramda/es/prepend'
+import sortWith from 'ramda/es/sortWith'
+import descend from 'ramda/es/descend'
+import prop from 'ramda/es/prop'
 
 const useStateUpdate = initialState => updateFn => {
   const [get, set] = useGetSet(initialState)
@@ -62,7 +65,11 @@ const update = msg => state => {
 export function App() {
   const [state, send] = useStateUpdate(initialState)(update)
   const { ipTxt, items } = state
-  const displayItems = items
+
+  const sortItems = pipe(sortWith([descend(prop('createdAt'))]))
+
+  const displayItems = sortItems(items)
+
   return (
     <div className="pv2 measure-wide center">
       <div>BroadCast</div>
