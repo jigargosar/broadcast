@@ -21,5 +21,8 @@
     "bracketSpacing": true,
     "jsxBracketSameLine": false,
     "endOfLine": "lf"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
   }
 }
