@@ -61,7 +61,7 @@ const update = msg => state => {
 
 export function App() {
   const [state, send] = useStateUpdate(initialState)(update)
-  const { ipTxt } = state
+  const { ipTxt, items } = state
   return (
     <div className="pv2 measure-wide center">
       <div>BroadCast</div>
@@ -83,6 +83,11 @@ export function App() {
         <div className="pa1" />
         <button type="submit">SND</button>
       </form>
+      <div>
+        {items.map(item => {
+          return <div key={item.id}>{item.txt}</div>
+        })}
+      </div>
     </div>
   )
 }
