@@ -62,7 +62,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      // title: 'Launcher',
+      title: 'Broadcast',
     }),
   ],
   // devtool: 'cheap-module-source-map',
