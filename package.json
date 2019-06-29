@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon -w yarn.lock -w package-lock.json -w webpack.config.js -x webpack-dev-server -- --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
