@@ -73,5 +73,6 @@ module.exports = {
     inline: true,
     stats: 'errors-only',
     hot: true,
+    overlay: true,
   },
 }
