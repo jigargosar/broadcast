@@ -53,19 +53,23 @@ export function App() {
       <div>Header</div>
       <div className="pa1" />
       <form
-        className=""
+        className="flex items-center"
         onSubmit={e => {
           e.preventDefault()
           send(Msg.OnIpSubmit)
         }}
       >
-        <input
-          className="ph1 w-100 lh-copy"
-          autoFocus
-          type="text"
-          value={ipTxt}
-          onChange={e => send(Msg.OnIpChanged(e.target.value))}
-        />
+        <div className="flex-auto">
+          <input
+            className="ph1 w-100 lh-copy"
+            autoFocus
+            type="text"
+            value={ipTxt}
+            onChange={e => send(Msg.OnIpChanged(e.target.value))}
+          />
+        </div>
+        <div className="pa1" />
+        <button type="submit">SND</button>
       </form>
     </div>
   )
