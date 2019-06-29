@@ -1,5 +1,10 @@
 import React from 'react'
 
 export function App() {
-  return <div>HW</div>
+  return (
+    <div>
+      <div>Header</div>
+      <div>Content</div>
+    </div>
+  )
 }
